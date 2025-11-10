@@ -24,6 +24,7 @@ h2 {
     min-height: 500px;
     min-width: 1280px;
     border: 10px #740d0d;
+    object-fit: cover;
     /*padding: 20 20 20 20px;*/
 }
 
