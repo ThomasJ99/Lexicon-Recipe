@@ -10,10 +10,6 @@ main{
     flex-direction: row;
 }
 
-span {
-    flex: 1;
-}
-
 p {
     margin-left: 20px;
 }
@@ -32,6 +28,10 @@ h2 {
     font-size: 24px;
     margin-bottom: 8px;
     margin-left: 20px;
+}
+
+.flex-sides {
+    flex: 1;
 }
 
 .middle{
