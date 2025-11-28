@@ -5,7 +5,7 @@ body {
     margin: 0;
 }
 
-main{
+main {
     display:flex;
     flex-direction: row;
 }
@@ -16,7 +16,7 @@ p {
 
 h1 {
     color: #A10000; 
-    font-size: 28px; 
+    font-size: 28px;
     margin-left: 20px;
 }
 
@@ -34,7 +34,7 @@ h2 {
     flex: 1;
 }
 
-.middle{
+.flex-middle{
     flex: 2
 }
 
@@ -81,7 +81,7 @@ h2 {
 }
 
 .img-fit {
-    display: flex;
+    display: block;
     height: 467px;   
     width: 580px; 
     min-width: 300px; 
