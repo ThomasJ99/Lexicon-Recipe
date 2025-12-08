@@ -1,0 +1,35 @@
+:root {
+  --clr: #fff; /*Placeholder to remove error*/
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-around;
+  margin-inline: 30rem;
+
+  & a {
+    text-decoration: none;
+    background-color: turquoise;
+  }
+
+  & nav {
+    background-color: wheat;
+    & ul {
+      background-color: red;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin-bottom: 1rem;
+      & li {
+        list-style: none;
+        background-color: blue;
+      }
+    }
+  }
+}
+
+button {
+  background-color: yellowgreen;
+  font-style: italic;
+  /* font-family: "Comic Sans"; */
+}
