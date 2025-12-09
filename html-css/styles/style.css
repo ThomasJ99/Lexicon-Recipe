@@ -21,22 +21,21 @@
 .nav-header {
   background-color: #222d85;
 
-  .head-flex {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: aqua;
-    max-width: 1280px;
-    margin: auto;
-    nav {
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        padding: 1rem;
-        margin-block: 1rem;
-        li {
-          list-style: none;
-        }
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aqua;
+  max-width: 1280px;
+  min-width: 440px;
+  margin: auto;
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem;
+      margin-block: 1rem;
+      li {
+        list-style: none;
       }
     }
   }
