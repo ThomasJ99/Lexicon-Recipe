@@ -5,45 +5,6 @@
 
 /*Composition*/
 
-/*Utilities*/
-
-.red-text {
-  color: #a10000;
-}
-
-.h2-size {
-  font-size: 2rem;
-}
-
-.no-text-deco {
-  text-decoration: none;
-}
-
-/*Block*/
-
-.nav-header {
-  display: flex;
-  justify-content: space-around;
-  background-color: #fff;
-  align-items: center;
-
-  > a {
-  }
-
-  nav {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      /* padding: 1rem; */
-      margin-block: 1rem;
-      li {
-        list-style: none;
-      }
-    }
-  }
-}
-
 button {
   font-style: italic;
   font-size: 1.5rem;
@@ -61,8 +22,77 @@ button {
     box-shadow: 2px 2px 0 black, 4px 4px 0 #bbb, 6px 6px 0 black;
   }
 
-  &:active {
+  &:in(:active, :focus-visible) {
     filter: brightness(1.5);
+  }
+}
+
+/*Utilities*/
+
+.red-text {
+  color: #a10000;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.h1-size {
+  font-size: 4rem;
+}
+
+.h2-size {
+  font-size: 2rem;
+}
+
+.no-text-deco {
+  text-decoration: none;
+}
+
+.overlay {
+  border-image: fill 1
+    linear-gradient(hsl(0 100% 50 / 0.3), hsl(240 100% 50% / 0.3));
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+/*Block*/
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 2rem;
+  background-color: #fff;
+  align-items: center;
+
+  > a {
+  }
+
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      /* padding: 1rem; */
+      margin-block: 1rem;
+      li {
+        list-style: none;
+      }
+    }
   }
 }
 
@@ -131,6 +161,15 @@ a {
   }
 }
 
+.hero-bg {
+  background-image: url("../../images/heropan.jpg");
+  text-align: center;
+  padding: 8rem;
+  background-position: center;
+  background-size: contain; /*change to cover later*/
+  background-repeat: no-repeat;
+}
+
 .wrapper {
   max-inline-size: 1280px;
   margin: auto;
@@ -140,5 +179,6 @@ a {
 
 @media (min-width: 750px) {
 }
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 
 /*Reset*/
