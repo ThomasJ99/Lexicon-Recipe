@@ -19,20 +19,25 @@
 }
 
 .nav-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
+  background-color: #222d85;
 
-  & nav {
-    & ul {
-      display: flex;
-      gap: 2rem;
-      padding: 1rem;
-      margin-block: 2rem;
-      /* & li:not(:first-child) {
-        list-style: none;
-      } */
+  .head-flex {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aqua;
+    max-width: 1280px;
+    margin: auto;
+    nav {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 1rem;
+        margin-block: 1rem;
+        li {
+          list-style: none;
+        }
+      }
     }
   }
 }
@@ -43,7 +48,7 @@ button {
   letter-spacing: 2px;
   border: 4px solid #000;
   margin-block: 2rem;
-  padding: 5px 10px;
+  /* padding: 2px 4px; for button size*/
   cursor: pointer;
   outline: none;
   box-shadow: 4px 4px 0 black, 8px 8px 0 #bbb, 12px 12px 0 black;
@@ -129,8 +134,11 @@ a {
 
 /*Exception*/
 
+@media (min-width: 750px) {
+}
+
 /*Reset*/
 
 li {
-  list-style: none;
+  /* list-style: none; */
 }
