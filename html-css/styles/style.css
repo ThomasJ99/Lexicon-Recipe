@@ -1,6 +1,7 @@
 :root {
   /*Global variables*/
   --clr: #fff; /*Placeholder to remove error*/
+  font-family: "Open Sans";
 }
 
 /*Composition*/
@@ -10,6 +11,7 @@ button {
   font-size: 1.5rem;
   letter-spacing: 2px;
   border: 4px solid #000;
+
   margin-block: 1rem;
   /* padding: 2px 4px; for button size*/
   cursor: pointer;
@@ -68,6 +70,10 @@ button {
 
 .block {
   display: block;
+}
+
+.border-r {
+  border-radius: 3px;
 }
 
 .margin-0 {
@@ -181,30 +187,24 @@ a {
   background-repeat: no-repeat;
 }
 
-.cards {
+/* .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  margin-inline: 2rem;
+  grid-auto-rows: 1fr;
+  margin-inline: 10rem;
   gap: 1em;
-
-  /* align-items: center;
-  justify-items: center; */
-
-  height: 30ch;
-  /* background-color: aqua; */
 
   .card {
     background-color: #fff;
-    border: solid 1px gray;
-    border-radius: 3px;
+    border: solid 1px rgb(167, 167, 167);
+
     padding: 1rem;
     * + * {
       margin-top: 0.25em;
     }
 
     img {
-      height: 25ch;
+      height: 30ch;
       object-fit: cover;
     }
 
@@ -215,7 +215,106 @@ a {
     &:active {
       filter: brightness(1.1);
     }
-    /* a { OLD HOVER
+   
+  }
+
+  .card:nth-child(1) {
+    height: 50ch;
+  }
+
+  .card:nth-child(3) {
+  }
+} */
+
+.box {
+  background-color: #fff;
+    border: solid 1px rgb(167, 167, 167);
+    padding: 1rem;
+    
+    * + * {
+      margin-top: 0.25em;
+    }
+
+    img {
+      /* height: 30ch; */
+      object-fit: cover;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+      transition: 0.3s;
+    }
+    &:active {
+      filter: brightness(1.1);
+    }
+   
+  }
+}
+
+.box-1 {
+  /* background-color: #0071ff; */
+  grid-area: box-1;
+}
+
+.box-2 {
+  /* background-color: #0071ff; */
+  grid-area: box-2;
+}
+
+.box-3 {
+  background-color: #0071ff;
+  grid-area: box-3;
+}
+
+.box-4 {
+  background-color: #0071ff;
+  grid-area: box-4;
+}
+
+.box-5 {
+  background-color: #0071ff;
+  grid-area: box-5;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  /* grid-auto-columns: 1fr; */
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  margin-inline: 5rem;
+  justify-content: center;
+  grid-template-areas:
+    "box-1 box-2 box-3"
+    "box-4 box-2 box-5";
+}
+
+@media (max-width: 56em) {
+  .grid-container {
+    grid-template-areas:
+      "box-1 box-1"
+      "box-1 box-1"
+      "box-4 box-5";
+  }
+}
+
+@media (max-width: 42em) {
+  .grid-container {
+    grid-template-areas:
+      "box-1 box-2"
+      "box-3 box-2"
+      "box-3 box-4"
+      "box-5 box-4";
+  }
+}
+
+.wrapper {
+  max-inline-size: 1280px;
+  margin: auto;
+  background-color: #ebebeb;
+}
+
+/* a { OLD HOVER
       img {
         &:hover {
           filter: brightness(0.8);
@@ -226,25 +325,12 @@ a {
         filter: brightness(1.1);
       }
     } */
-  }
-
-  .card:nth-child(1) {
-    height: 50ch;
-  }
-
-  .card:nth-child(3) {
-    /* height: 30ch; */
-  }
-}
-
-.wrapper {
-  max-inline-size: 1280px;
-  margin: auto;
-  background-color: #ebebeb;
-}
 
 /*Exception*/
 
+.flow > * + * {
+  margin-block-start: 1.5rem;
+}
 @media (min-width: 750px) {
 }
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");

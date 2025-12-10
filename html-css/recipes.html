@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/reset.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Document</title>
   </head>
@@ -19,12 +27,12 @@
             <li><a class="link" href="#">Kontakt</a></li>
           </ul>
         </nav>
-        <button>Logga in</button>
+        <button class="border-r">Logga in</button>
       </header>
     </div>
 
     <main>
-      <div class="wrapper">
+      <div class="wrapper flow">
         <article aria-label="hero-card">
           <div class="hero-bg overlay flex">
             <h1 class="white-text h1-size">
@@ -34,16 +42,16 @@
           </div>
         </article>
         <h2 class="h2-size red-text align-text">
-          Hitta dina nya favoritrecept
+          Hitta dina nya favoritrecept!
         </h2>
-        <div class="cards">
-          <a
-            href="#"
-            class="no-text-deco"
-            alt="Recept till traditionella tunna pannkakor"
-          >
-            <article class="card">
-              <img class="margin-1" src="../images/image-1.jpg" />
+        <!-- <div class="cards">
+          <a href="#" class="no-text-deco">
+            <article class="card border-r">
+              <img
+                class="margin-1"
+                src="../images/image-1.jpg"
+                alt="Recept till traditionella tunna pannkakor"
+              />
               <h2 class="black-text">Klassiska pannkakor</h2>
               <p class="black-text">
                 Gör traditionellatunna pannkakor med detta enkla och goda
@@ -52,6 +60,30 @@
             </article>
           </a>
           <article class="card"></article>
+          <article class="card"></article>
+        </div> -->
+
+        <div class="grid-container">
+          <div class="box-1 box">
+            <a href="#" class="no-text-deco">
+              <article class="card border-r">
+                <img
+                  class="margin-1"
+                  src="../images/image-1.jpg"
+                  alt="Recept till traditionella tunna pannkakor"
+                />
+                <h2 class="black-text">Klassiska pannkakor</h2>
+                <p class="black-text">
+                  Gör traditionellatunna pannkakor med detta enkla och goda
+                  pannkaksrecept.
+                </p>
+              </article>
+            </a>
+          </div>
+          <div class="box-2 box"></div>
+          <div class="box-3 box">wwwwwwwwwwwwwwww</div>
+          <div class="box-4 box">wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</div>
+          <div class="box-5 box">wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</div>
         </div>
       </div>
     </main>
