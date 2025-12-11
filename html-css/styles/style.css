@@ -65,7 +65,7 @@ body {
 
 .overlay {
   border-image: fill 1
-    linear-gradient(hsl(0 100% 50 / 0.3), hsl(240 100% 50% / 0.3));
+    linear-gradient(hsl(0 100% 50 / 0.4), hsl(240 100% 50% / 0.4));
 }
 
 .flex {
@@ -197,9 +197,9 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 300px);
   grid-auto-rows: 1fr;
-  margin-inline: 10rem;
+  justify-content: center;
   gap: 1em;
 
   .card {
@@ -230,6 +230,18 @@ a {
   }
 
   .card:nth-child(3) {
+  }
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media (max-width: 670px) {
+  .cards {
+    grid-template-columns: repeat(1, 300px);
   }
 }
 
@@ -308,11 +320,29 @@ a {
   }
 } */
 
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+}
+
 .wrapper {
   max-inline-size: 1280px;
   margin: auto;
   background-color: #f9f9f9;
-  padding-bottom: 5rem;
+
+  & > :not(header) {
+    padding-bottom: 1rem;
+  }
 }
 
 /* a { OLD HOVER
@@ -332,8 +362,5 @@ a {
 .flow > * + * {
   margin-block-start: 1.5rem;
 }
-@media (min-width: 750px) {
-}
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 
 /*Reset*/
