@@ -25,7 +25,7 @@ button {
 
 body {
   background-color: rgba(161, 0, 0, 0.3);
-  font-family: "Open Sans";
+  font-family: "Open Sans", "Roboto", sans-serif;
 }
 
 /*Utilities*/
@@ -84,7 +84,7 @@ body {
 
 .overlay {
   border-image: fill 1
-    linear-gradient(hsl(0 100% 50 / 0.5), hsl(240 100% 50% / 0.5));
+    linear-gradient(hsl(0 100% 50 / 0.3), hsla(282, 100%, 50%, 0.3));
 }
 
 .flex {
@@ -132,11 +132,12 @@ body {
   }
 
   nav {
+    display: flex;
+    align-items: center;
     ul {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-block: 1rem;
     }
   }
 }
@@ -150,7 +151,7 @@ body {
 
   &:hover {
     color: #fff;
-    box-shadow: inset 200px 0 0 0 #a10000;
+    box-shadow: inset 100px 0 0 0 #a10000;
     text-decoration: underline;
   }
 
@@ -163,27 +164,26 @@ body {
 .hero-bg {
   background-image: url("../../images/heropan.jpg");
   padding: 8rem;
-  background-position: center;
+  background-position: top;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .cards {
   display: grid;
-  /* grid-template-columns: repeat(3, 300px); */
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   justify-content: center;
   gap: 1em;
   margin-inline: 5rem;
-  height: auto;
+  align-items: stretch;
 
   .card {
     background-color: #fff;
     border: solid 1px rgb(167, 167, 167);
-
+    height: 100%;
     padding: 1rem;
+
     * + * {
-      margin-top: 0.25em;
+      margin-top: 0.4em;
     }
 
     img {
@@ -194,10 +194,11 @@ body {
 
     &:hover {
       filter: brightness(0.9);
+      transform: scale(1.01);
       transition: 0.3s;
 
       &:is(#featured) {
-       background-color: rgba(161, 0, 0, 0.3);
+        background-color: rgba(161, 0, 0, 0.3);
       }
     }
 
