@@ -2,7 +2,6 @@
 <html lang="sv">
   <head>
     <title>Receptsida för pannkakor</title>
-    <link rel="stylesheet" href="styles/website.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/reset.css" />
 
@@ -22,35 +21,29 @@
   <body>
     <div class="wrapper">
       <header class="nav-header">
+        <a href="#main" class="skip">Hoppa till huvudinnehållet.</a>
         <a class="h2-size no-text-deco red-text" href="#">Recepta</a>
         <nav>
-          <ul>
-            <li><a class="link" href="#">Recept</a></li>
+          <ul class="no-list li-size">
+            <li><a class="link" href="#">Alla recept</a></li>
             <li><a class="link" href="#">Om oss</a></li>
             <li><a class="link" href="#">Kontakt</a></li>
           </ul>
         </nav>
-        <button>Logga in</button>
+        <button class="border-r">Logga in</button>
       </header>
     </div>
 
     <main id="main" aria-label="Huvudinnehåll">
-      <div class="flex-sides" aria-hidden="true"></div>
-      <article class="flex-middle" aria-labelledby="main-heading">
-        <header class="header-container" aria-label="Sidhuvud">
-          <img
-            class="head-image"
-            src="../images/image-1.jpg"
-            alt="Pannkakor med hallon och grädde"
-          />
-          <!--h1 & sub container-->
-        </header>
+      <div class="wrapper flow">
+        <article aria-label="Banner" alt="Pannkakor med hallon och grädde">
+          <div class="hero-bg">
+          </div>
+        </article>
 
-        <div class="centered-container">
-          <section class="text-container">
             <h1 id="main-heading">Enkelt recept på pannkakor</h1>
             <!-- enbart styling -->
-            <div class="sub-container">
+            <div>
               <p>
                 Gör traditionella tunna pannkakor med detta enkla och goda
                 pannkaksrecept.
@@ -84,10 +77,9 @@
                 <li>Servera med sylt, bär eller frukt.</li>
               </ol>
             </section>
-          </section>
 
           <section aria-labelledby="serverings-heading">
-            <h2 id="serverings-heading" class="text-container">
+            <h2 id="serverings-heading">
               Serveringsförslag
             </h2>
             <figure
@@ -106,9 +98,8 @@
               />
             </figure>
           </section>
-        </div>
       </article>
-      <div class="flex-sides"></div>
+      </div>      
     </main>
   </body>
 </html>

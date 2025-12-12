@@ -1,3 +1,8 @@
+:root {
+  /*Global Variables*/
+  --clr-pr: rgba(rgba(161, 0, 0, 0.3));
+}
+
 /*Composition*/
 
 button {
@@ -135,6 +140,7 @@ body {
     display: flex;
     align-items: center;
     ul {
+      background-color: #a10000;
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
