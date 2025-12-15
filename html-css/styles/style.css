@@ -1,7 +1,7 @@
 :root {
   /*Global Variables*/
   --clr-pr: rgba(rgba(161 0 0 0.3));
-  --clr-accent: #a10000;
+  --clr-accent: rgb(161, 0, 0);
   --clr-gray: #ebebeb;
   --clr-gray-2: rgb(167 167 167);
   --clr-white: #fff;
@@ -12,6 +12,9 @@
   --fs-xl: 1.5rem;
   --fs-xxl: 1.75rem;
   --fs-banner: 4rem;
+
+  /*Spacing*/
+  --base: 0.25rem;
 }
 
 /*Composition*/
@@ -42,10 +45,6 @@ button {
 body {
   background-color: var(--clr-pr);
   font-family: "Open Sans", "Roboto", sans-serif;
-}
-
-ul, ol {
-  padding-left: 2rem;
 }
 
 li {
@@ -89,6 +88,10 @@ li {
 
 .li-size {
   font-size: var(--fs-l);
+}
+
+.li-indent {
+  padding-left: 2rem;
 }
 
 .inline-size {
@@ -160,6 +163,10 @@ li {
   padding: 1rem;
 }
 
+.m-5 {
+  margin-inline: calc(16 * var(--base));
+}
+
 .flow > * + * {
   margin-block-start: 1.5rem;
 }
@@ -180,10 +187,10 @@ li {
     display: flex;
     align-items: center;
     ul {
-      background-color: #a10000;
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
+      padding-left: 0;
     }
   }
 }
@@ -212,7 +219,8 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   gap: 2rem;
   .image {
-    max-height: 500px;
+    aspect-ratio: 1 / 1;
+    /* max-height: 500px; */
     width: 100%;
     object-fit: cover;
   }
