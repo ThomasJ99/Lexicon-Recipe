@@ -5,6 +5,7 @@
   --clr-gray: #ebebeb;
   --clr-gray-2: rgb(167 167 167);
   --clr-white: #fff;
+  --clr-white-2: #f9f9f9;
   --clir-black: #000;
 
   /*Fonts*/
@@ -159,8 +160,16 @@ li {
   margin-inline: 3rem;
 }
 
+.margin-t {
+  margin-top: 1rem;
+}
+
 .margin-b-1 {
   margin-block: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
 }
 
 .padding-0 {
@@ -183,6 +192,7 @@ li {
 
 .nav-header {
   display: flex;
+  /*Separates all content inside nav from each other*/
   justify-content: space-between;
   margin-inline: 2rem;
   text-align: center;
@@ -193,19 +203,22 @@ li {
 
   nav {
     display: flex;
+    /*Aligns navbar to be in the middle, height-wise*/
     align-items: center;
     ul {
+      /*Allows navbar to be horisontal, wrap allows them to go back to vertical when needed*/
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
       padding-left: 0;
     }
   }
 }
 
 .link {
+  /*Inset is a shorthand with same syntax as margin shorthand*/
   box-shadow: inset 0 0 0 0 #a10000;
   color: #000000;
+  /*Animates the box shadow to appear and dissapear when triggered by hover*/
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-decoration: none;
   font-weight: 700;
@@ -224,11 +237,12 @@ li {
 
 .image-grid {
   display: grid;
+  /*Automatically creates cards that fit the columns with a minimum width of 30ch and max 1fr*/
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-  gap: 2rem;
+
   .image {
+    /*Makes image match size of the container*/
     aspect-ratio: 1 / 1;
-    /* max-height: 500px; */
     width: 100%;
     object-fit: cover;
   }
@@ -240,39 +254,6 @@ li {
   background-position: top;
   background-size: cover;
 } */
-
-.hero-wrapper {
-  display: grid;
-  grid-template-areas: "stack";
-  /* max-height: 500px; */
-  img {
-    grid-area: stack;
-    /* max-height: 500px; */
-    aspect-ratio: 3;
-    object-fit: cover;
-    object-position: top;
-  }
-  .text-container {
-    grid-area: stack;
-    display: grid;
-    z-index: 2;
-    width: min(30, 100%);
-    padding: 2rem;
-    align-items: start;
-    justify-items: stretch;
-  }
-}
-
-.gradient {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  z-index: 2;
-  background-image: linear-gradient(
-    to right,
-    hsl(0 100% 50 / 0.3),
-    hsla(282, 100%, 50%, 0.3)
-  );
-}
 
 /* .hero {
   object-fit: cover;
@@ -294,12 +275,52 @@ li {
   );
 } */
 
+.hero-wrapper {
+  display: grid;
+  /*Use this to create layers that can be stacked*/
+  grid-template-areas: "stack";
+  /* max-height: 500px; */
+
+  img {
+    grid-area: stack;
+    /* max-height: 500px; */
+    aspect-ratio: 3;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .text-container {
+    grid-area: stack;
+    display: grid;
+    /*Changes which order the layer is in*/
+    z-index: 1;
+    width: min(30, 100%);
+    padding: 2rem;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  .gradient {
+    /*Puts the grid at the same location as the other elements*/
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 0;
+    background-image: linear-gradient(
+      to bottom,
+      hsl(0 100% 50 / 0.3),
+      hsla(282, 100%, 50%, 0.3)
+    );
+  }
+}
+
 .cards {
   display: grid;
+  /*Automatically creates cards that fit the columns with a minimum width of 30ch and max 1fr*/
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   justify-content: center;
   gap: 1em;
   margin-inline: 5rem;
+  /*This with height on card allows the card to always be the same size*/
   align-items: stretch;
 
   .card {
@@ -308,6 +329,7 @@ li {
     height: 100%;
     padding: 1rem;
 
+    /*Adds some nice text spacing inside my cards*/
     * + * {
       margin-top: 0.4em;
     }
@@ -319,7 +341,7 @@ li {
     }
 
     &:hover {
-      filter: brightness(0.9);
+      filter: brightness(0.95);
       transform: scale(1.01);
       transition: 0.3s;
 
@@ -353,8 +375,9 @@ li {
 .wrapper {
   max-inline-size: 1280px;
   margin: auto;
-  background-color: #f9f9f9;
+  background-color: var(--clr-white-2);
 
+  /*Adds additional padding on the bottom of the wrapper, but not on the first wrapper in the nav header*/
   & > :not(header) {
     padding-bottom: 1rem;
   }
