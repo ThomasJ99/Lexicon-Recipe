@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="sv">
   <head>
-    <title>Receptsida för pannkakor</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/reset.css" />
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="description"
-      content="Receptsida för pannkakor. Här lär du dig vilka ingredienser du behöver och hur du gör fantastiskt goda pannkakor."
+    name="description"
+    content="Receptsida för pannkakor. Här lär du dig vilka ingredienser du behöver och hur du gör fantastiskt goda pannkakor."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
     />
+    <title>Receptsida för pannkakor</title>
   </head>
 
   <body>
@@ -25,9 +25,9 @@
         <a class="h1-size no-text-deco red-text" href="#">Recepta</a>
         <nav>
           <ul class="no-list li-size gap-2">
-            <li><a class="link" href="#">Alla recept</a></li>
+            <li><a class="link" href="recipes.html">Alla recept</a></li>
             <li><a class="link" href="#">Om oss</a></li>
-            <li><a class="link" href="#">Kontakt</a></li>
+            <li><a class="link" href="contact.html">Kontakt</a></li>
           </ul>
         </nav>
         <button class="border-r">Logga in</button>
@@ -96,7 +96,61 @@
             </figure>
           </section>
       </article>
-      </div>      
+<!-- Action is the reciever, in our case our site, method means how we transfer the form info, 
+ post means we send it somewhere, get means we receive it  -->
+      <form class="margin-i-3 gap-1" action="#" method="post">
+        <div class="form-group">
+          <!-- The for attribute connects it to its content, allowing screenreaders to process it -->
+          <label for="name">Full Name</label>
+          <!-- The attribute type="text" creates a normal text type input field -->
+          <input type="text" name="username" id="name" required autocomplete="name" placeholder="John Doe">
+          <!-- Autocomplete attribute is required for accessibility -->
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="name">Company Name</label>
+          <input type="text" id="company" required>
+        </div> -->
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required autocomplete="email" placeholder="John.Doe@email.com">
+        </div>
+
+        <div class="form-group">
+          <!-- Dropdown with "options" -->
+          <label for="dept">Department</label>
+          <select name="department" id="dept">
+            <option value="" disabled selected>Select..</option>
+            <option value="support">Support</option>
+            <option value="sales">Sales</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="msg">Message</label>
+          <!-- Rows determines the size of the textarea window before it start expanding -->
+          <textarea name="message" id="msg" rows="5" placeholder="Message..."></textarea>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="name">Phone</label>
+          <input type="tel" id="phone" required>
+        </div> -->
+
+          <div class="form-group">
+            <input type="checkbox" id="privacy">
+            <label 
+              for="privacy" 
+              class="fine-print">
+              I agree that my personal data will be processed in accordance with the
+              <a href="#">Privacy Policy</a>
+            </label>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>      
     </main>
   </body>
 </html>

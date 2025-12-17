@@ -6,7 +6,7 @@
   --clr-gray-2: rgb(167 167 167);
   --clr-white: #fff;
   --clr-white-2: #f9f9f9;
-  --clir-black: #000;
+  --clr-black: #000;
 
   /*Fonts*/
   --fs-l: 1.25rem;
@@ -20,19 +20,18 @@
 
 /*Composition*/
 
-button {
+/* button {
   font-style: italic;
   font-size: 1.5rem;
   letter-spacing: 2px;
   border: 4px solid #000;
 
-  margin-block: 1rem;
-  /* padding: 2px 4px; for button size*/
-  cursor: pointer;
+  margin-block: 1rem; */
+/* padding: 2px 4px; for button size*/
+/* cursor: pointer;
   outline: none;
   box-shadow: 4px 4px 0 black, 8px 8px 0 #bbb, 12px 12px 0 black;
   transition: all 0.2s ease;
-  /* font-family: "Comic Sans"; */
   &:hover {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0 black, 4px 4px 0 #bbb, 6px 6px 0 black;
@@ -40,6 +39,16 @@ button {
 
   &:in(:active, :focus-visible) {
     filter: brightness(1.5);
+  }
+
+} */
+
+button {
+  
+  .btn-pri {
+  }
+
+  .btn-sec {
   }
 }
 
@@ -60,7 +69,7 @@ li {
 /*Utilities*/
 
 .text-shadow {
-  text-shadow: 1px 1px 2px var(--clir-black);
+  text-shadow: 1px 1px 2px var(--clr-black);
 }
 
 .red-text {
@@ -72,7 +81,7 @@ li {
 }
 
 .black-text {
-  color: var(--clir-black);
+  color: var(--clr-black);
 }
 
 .h1-banner-size {
@@ -167,6 +176,9 @@ li {
 .margin-b-1 {
   margin-block: 1rem;
 }
+.gap-1 {
+  gap: 1rem;
+}
 
 .gap-2 {
   gap: 2rem;
@@ -246,6 +258,50 @@ li {
     width: 100%;
     object-fit: cover;
   }
+}
+
+form {
+  display: grid;
+
+  /* @media (width > 720px) {
+    grid-template-columns: 1fr 1fr;
+  } */
+}
+
+.form-group {
+  display: grid;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+input {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  border: 3px solid var(--clr-pr);
+  border-radius: 1rem;
+  padding: 1ex 2ex;
+
+  accent-color: var(--clr-accent);
+
+  & input:not([type="checkbox"]) {
+    width: 100%;
+  }
+}
+
+.form-group:has(.fine-print) {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1ch;
+}
+
+form button {
+  /*Makes the element take up the entire grid row, is dependent on parent 
+  and will always take up the entire row*/
+  grid-column: 1 / -1;
+  justify-self: end;
 }
 
 /* .hero-bg {
