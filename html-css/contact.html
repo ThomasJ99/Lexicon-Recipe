@@ -17,20 +17,107 @@
     <title>Kontakt</title>
   </head>
   <body>
+    <div class="wrapper">
+      <header class="nav-header">
+        <a href="#main" class="skip">Hoppa till huvudinnehållet.</a>
+        <a class="h1-size no-text-deco red-text" href="#">Recepta</a>
+        <nav>
+          <ul class="no-list li-size gap-2">
+            <li><a class="link" href="recipes.html">Alla recept</a></li>
+            <li><a class="link" href="#">Om oss</a></li>
+            <li><a class="link" href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <button class="border-r btn-pri">Logga in</button>
+      </header>
+    </div>
     <main>
-      <div class="wrapper">
-        <header class="nav-header">
-          <a href="#main" class="skip">Hoppa till huvudinnehållet.</a>
-          <a class="h1-size no-text-deco red-text" href="#">Recepta</a>
-          <nav>
-            <ul class="no-list li-size gap-2">
-              <li><a class="link" href="recipes.html">Alla recept</a></li>
-              <li><a class="link" href="#">Om oss</a></li>
-              <li><a class="link" href="contact.html">Kontakt</a></li>
-            </ul>
-          </nav>
-          <button class="border-r">Logga in</button>
-        </header>
+      <div class="wrapper flow">
+        <article class="hero-wrapper">
+          <!-- <div class="gradient"></div> -->
+          <img src="/images/contact-banner.jpg" alt="" />
+          <div class="text-container"></div>
+        </article>
+
+        <!-- Action is the reciever, in our case our site, method means how we transfer the form info, 
+        post means we send it somewhere, get means we receive it  -->
+        <form class="margin-i-3 gap-1" action="#" method="post">
+          <div class="form-group">
+            <!-- The for attribute connects it to its content, allowing screenreaders to process it -->
+            <label for="name">Namn</label>
+            <!-- The attribute type="text" creates a normal text type input field -->
+            <input
+              type="text"
+              name="username"
+              id="name"
+              required
+              autocomplete="name"
+              placeholder="Jane Doe"
+            />
+            <!-- Autocomplete attribute is required for accessibility -->
+          </div>
+
+          <!-- <div class="form-group">
+          <label for="name">Company Name</label>
+          <input type="text" id="company" required>
+        </div> -->
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              autocomplete="email"
+              placeholder="Jane.Doe@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="panncakes">Vad åt du för pannkakor?</label>
+            <!-- Select is a dropdown containing "options" -->
+            <select name="panncakes" id="panncakes" multiple size="7">
+              <option value="" disabled selected>Välj..</option>
+              <option value="classic">Klassiska pannkakor</option>
+              <option value="green">Gröna pannkakor</option>
+              <option value="blue">Blåa pannkakor</option>
+              <option value="yellow">Gula taco pannkakor</option>
+              <option value="purple">Lila pannkakor</option>
+              <option value="pink">Rosa pannkakor</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="msg">Meddelande</label>
+            <!-- Rows determines the size of the textarea window before it start expanding -->
+            <textarea
+              name="message"
+              id="msg"
+              rows="6"
+              placeholder="Text..."
+            ></textarea>
+          </div>
+
+          <!-- <div class="form-group">
+          <label for="name">Phone</label>
+          <input type="tel" id="phone" required>
+        </div> -->
+
+          <!-- <div class="form-group">
+            <input type="checkbox" id="privacy" />
+            <label for="privacy" class="fine-print">
+              I agree that my personal data will be processed in accordance with
+              the
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div> -->
+
+          <button class="border-r btn-sec" type="submit">
+            Skicka formulär
+          </button>
+          <button class="border-r btn-sect" type="submit">Heeej =P</button>
+        </form>
       </div>
     </main>
   </body>

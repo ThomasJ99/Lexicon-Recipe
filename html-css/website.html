@@ -96,60 +96,6 @@
             </figure>
           </section>
       </article>
-<!-- Action is the reciever, in our case our site, method means how we transfer the form info, 
- post means we send it somewhere, get means we receive it  -->
-      <form class="margin-i-3 gap-1" action="#" method="post">
-        <div class="form-group">
-          <!-- The for attribute connects it to its content, allowing screenreaders to process it -->
-          <label for="name">Full Name</label>
-          <!-- The attribute type="text" creates a normal text type input field -->
-          <input type="text" name="username" id="name" required autocomplete="name" placeholder="John Doe">
-          <!-- Autocomplete attribute is required for accessibility -->
-        </div>
-
-        <!-- <div class="form-group">
-          <label for="name">Company Name</label>
-          <input type="text" id="company" required>
-        </div> -->
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" required autocomplete="email" placeholder="John.Doe@email.com">
-        </div>
-
-        <div class="form-group">
-          <!-- Dropdown with "options" -->
-          <label for="dept">Department</label>
-          <select name="department" id="dept">
-            <option value="" disabled selected>Select..</option>
-            <option value="support">Support</option>
-            <option value="sales">Sales</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="msg">Message</label>
-          <!-- Rows determines the size of the textarea window before it start expanding -->
-          <textarea name="message" id="msg" rows="5" placeholder="Message..."></textarea>
-        </div>
-
-        <!-- <div class="form-group">
-          <label for="name">Phone</label>
-          <input type="tel" id="phone" required>
-        </div> -->
-
-          <div class="form-group">
-            <input type="checkbox" id="privacy">
-            <label 
-              for="privacy" 
-              class="fine-print">
-              I agree that my personal data will be processed in accordance with the
-              <a href="#">Privacy Policy</a>
-            </label>
-        </div>
-
-        <button type="submit">Send Message</button>
-      </form>
     </div>      
     </main>
   </body>
