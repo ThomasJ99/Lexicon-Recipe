@@ -2,12 +2,13 @@
   /*Global Variables*/
   --clr-pr: hsl(0 100% 32% / 0.3);
   --clr-accent: rgb(161 0 0);
-  --clr-gray: #ebebeb;
+  --clr-gray: rgb(235 235 235);
   --clr-gray-2: rgb(167 167 167);
-  --clr-white: #fff;
-  --clr-black: #000;
+  --clr-white: rgb(255 255 255);
+  --clr-black: rgb(0 0 0);
 
   --clr-sec: hsl(288 67% 76%);
+  --sec-accent: hsl(288 67% 46%);
 
   --clr-text-main: #1e1e1e;
 
@@ -20,12 +21,13 @@
   --fs-xxl: 1.75rem;
   --fs-banner: 4rem;
 
-  /*Spacing*/
+  /*Spacing*/ /*Still testing if i want this or not*/
   --base: 0.25rem;
 }
 
-/*Composition*/
+/*  Composition   */
 
+/*OLD BUTTON might change back to it*/
 /* button {
   font-style: italic;
   font-size: 1.5rem;
@@ -52,35 +54,35 @@
 button {
   border: none;
   padding: 0.5rem 1.25rem;
+  margin-block: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
 
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease,
     color 0.2s ease;
-}
 
-.btn-pri {
-  /* background-color: var(--clr-pr); */
-  font-weight: 400;
-}
+  &.btn-pri {
+    /* background-color: var(--clr-pr); */
+    font-weight: 400;
+    text-wrap: nowrap;
+  }
 
-.btn-sec {
-  background: transparent;
-  color: hsl(288 67% 46%); /*Add a calc with -30 on lightness*/
-  border: 3px solid var(--clr-sec);
-  /* box-shadow: none; */
+  &.btn-sec {
+    background: transparent;
+    color: var(--sec-accent); /*Add a calc with -30 on lightness*/
+    border: 3px solid var(--clr-sec);
 
-  &:hover {
+    &:hover {
+      background: var(--clr-sec);
+      color: var(--clr-white);
+    }
+  }
+  /* 
+  &.btn-sect {
+    border: 3px solid var(--clr-sec);
+
     background: var(--clr-sec);
     color: var(--clr-white);
-  }
-}
-
-.btn-sect {
-  border: 3px solid var(--clr-sec);
-
-  background: var(--clr-sec);
-  color: var(--clr-white);
+  } */
 }
 
 body {
@@ -97,10 +99,14 @@ li {
   padding: 1rem;
 }
 
-/*Utilities*/
+/*  Utilities   */
 
 .text-shadow {
   text-shadow: 1px 1px 2px var(--clr-black);
+}
+
+.box-shadow {
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
 }
 
 .red-text {
@@ -116,7 +122,8 @@ li {
 }
 
 .h1-banner-size {
-  font-size: clamp(3rem, var(--fs-banner), 5rem);
+  /* Needs better values */
+  font-size: clamp(min(3vw, 2rem), 5vw, max(2vw, 4rem));
 }
 
 .h1-size {
@@ -125,6 +132,10 @@ li {
 
 .h2-size {
   font-size: var(--fs-xl);
+}
+
+.line-height {
+  line-height: normal;
 }
 
 .line-height-1 {
@@ -167,10 +178,9 @@ li {
   border: 2px solid var(--clr-pr);
 }
 
-/* .overlay {
-  border-image: fill 1
-    linear-gradient(hsl(0 100% 50 / 0.3), hsla(282, 100%, 50%, 0.3));
-} */
+.grid {
+  display: grid;
+}
 
 .flex {
   display: flex;
@@ -207,6 +217,10 @@ li {
 .margin-b-1 {
   margin-block: 1rem;
 }
+
+.m-5 {
+  margin-inline: calc(16 * var(--base));
+}
 .gap-1 {
   gap: 1rem;
 }
@@ -223,15 +237,15 @@ li {
   padding: 1rem;
 }
 
-.m-5 {
-  margin-inline: calc(16 * var(--base));
+.padding-top {
+  padding-top: 2rem;
 }
 
 .flow > * + * {
   margin-block-start: 1.5rem;
 }
 
-/*Block*/
+/*  Block   */
 
 .nav-header {
   display: flex;
@@ -251,7 +265,9 @@ li {
     ul {
       /*Allows navbar to be horisontal, wrap allows them to go back to vertical when needed*/
       display: flex;
-      flex-wrap: wrap;
+      /*Would like to add a hamburger menu instead of wrap in the future*/
+      /* flex-wrap: wrap; */
+      /*Removes stupid padding that took way too long to figure out...*/
       padding-left: 0;
     }
   }
@@ -259,8 +275,8 @@ li {
 
 .link {
   /*Inset is a shorthand with same syntax as margin shorthand*/
-  box-shadow: inset 0 0 0 0 #a10000;
-  color: #000000;
+  box-shadow: inset 0 0 0 0 var(--clr-accent);
+  color: var(--clr-black);
   /*Animates the box shadow to appear and dissapear when triggered by hover*/
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-decoration: none;
@@ -268,7 +284,7 @@ li {
 
   &:hover {
     color: #fff;
-    box-shadow: inset 100px 0 0 0 #a10000;
+    box-shadow: inset 100px 0 0 0 var(--clr-accent);
     text-decoration: underline;
   }
 
@@ -296,90 +312,68 @@ form {
   @media (width > 720px) {
     grid-template-columns: 1fr 1fr;
   }
+  /*Adds some nice spacing*/
+  /*Add similar to namn in contact!!!!!*/
+  * + * {
+    margin-top: 0.4em;
+  }
 }
 
 textarea {
-  height: 100%;
-  background-color: #0033a1ee;
+  padding: 0.5rem 1rem;
+  border: solid 1px black;
+  resize: none;
 }
 
-.form-group {
-  display: grid;
-  background-color: #a10000;
+select {
+  border: solid 1px black;
+  background: transparent;
+
+  option {
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-white);
+  }
 }
 
-label {
-  /* text-transform: uppercase; */
-  /* font-size: 1rem; */
-  color: var(--clr-text-main);
-  background-color: aqua;
+.label-header {
+  color: var(--sec-accent);
+  font-size: var(--fs-l);
 }
 
 input {
-  background: var(--clr-black);
-  color: var(--clr-white);
-  border: 3px solid var(--clr-pr);
-  border-radius: 1rem;
-  padding: 1ex 2ex;
-  background-color: rgb(81, 255, 0);
-
-  accent-color: var(--clr-accent);
+  background: transparent;
+  /*Remove base border and add a new one*/
+  border: none;
+  border-bottom: 3px solid var(--clr-sec);
+  /*Adds color to things like checkbox and radio buttons*/
+  accent-color: var(--sec-accent);
 
   & input:not([type="checkbox"]) {
     width: 100%;
   }
 }
 
-.form-group:has(.fine-print) {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 1ch;
-}
-
 form button {
   /*Makes the element take up the entire grid row, is dependent on parent 
   and will always take up the entire row*/
   grid-column: 1 / -1;
+  /*Places button to the right*/
   justify-self: end;
 }
-
-/* .hero-bg {
-  background-image: url("../../images/heropan.jpg");
-  padding: 8rem;
-  background-position: top;
-  background-size: cover;
-} */
-
-/* .hero {
-  object-fit: cover;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  z-index: 1;
-  aspect-ratio: 2.5 / 1;
-}
-
-.text-container {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  z-index: 1;
-  width: 100%;
-  background-image: linear-gradient(
-    to right,
-    hsl(0 100% 50 / 0.3),
-    hsla(282, 100%, 50%, 0.3)
-  );
-} */
 
 .hero-wrapper {
   display: grid;
   /*Use this to create layers that can be stacked*/
   grid-template-areas: "stack";
-  /* max-height: 500px; */
+  /*Fine tune after banner text size is correct*/
+  min-height: 500px;
 
   img {
     grid-area: stack;
     /* max-height: 500px; */
-    aspect-ratio: 3;
+
+    height: 100%;
+    aspect-ratio: 3 / 1;
     object-fit: cover;
     object-position: top;
   }
@@ -389,7 +383,7 @@ form button {
     display: grid;
     /*Changes which order the layer is in*/
     z-index: 1;
-    width: min(30, 100%);
+    /* width: min(30ch, 100%); */
     padding: 2rem;
     align-items: start;
     justify-items: stretch;
@@ -420,7 +414,6 @@ form button {
 
   .card {
     background-color: var(--clr-white);
-    border: solid 1px var(--clr-gray-2);
     height: 100%;
     padding: 1rem;
 
@@ -430,6 +423,7 @@ form button {
     }
 
     img {
+      border-radius: 5px;
       height: 30ch;
       width: 100%;
       object-fit: cover;
@@ -468,6 +462,7 @@ form button {
 }
 
 .wrapper {
+  /* These two lines of code are incredible for making a wrapper with a page in the middle */
   max-inline-size: 1280px;
   margin: auto;
   background-color: var(--clr-white-2);

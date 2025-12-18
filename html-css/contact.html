@@ -28,23 +28,28 @@
             <li><a class="link" href="contact.html">Kontakt</a></li>
           </ul>
         </nav>
-        <button class="border-r btn-pri">Logga in</button>
+        <button class="border-r btn-pri box-shadow">Logga in</button>
       </header>
     </div>
     <main>
       <div class="wrapper flow">
         <article class="hero-wrapper">
-          <!-- <div class="gradient"></div> -->
-          <img src="/images/contact-banner.jpg" alt="" />
-          <div class="text-container"></div>
+          <img
+            src="/images/contact-banner.jpg"
+            alt="En funderande pannkaka som kontemplerar sitt liv"
+          />
         </article>
 
         <!-- Action is the reciever, in our case our site, method means how we transfer the form info, 
         post means we send it somewhere, get means we receive it  -->
-        <form class="margin-i-3 gap-1" action="#" method="post">
-          <div class="form-group">
+        <form
+          class="margin-i-3 gap-1 card border-r box-shadow padding-1"
+          action="#"
+          method="post"
+        >
+          <div class="grid">
             <!-- The for attribute connects it to its content, allowing screenreaders to process it -->
-            <label for="name">Namn</label>
+            <label class="label-header" for="name">Namn</label>
             <!-- The attribute type="text" creates a normal text type input field -->
             <input
               type="text"
@@ -57,27 +62,32 @@
             <!-- Autocomplete attribute is required for accessibility -->
           </div>
 
-          <!-- <div class="form-group">
-          <label for="name">Company Name</label>
-          <input type="text" id="company" required>
-        </div> -->
-
-          <div class="form-group">
-            <label for="email">Email</label>
+          <div class="grid">
+            <!-- Label describes something, similar to a header -->
+            <label class="label-header" for="email">Email</label>
+            <!-- Input creates a certain type of input field depending on its type attribute -->
             <input
               type="email"
               name="email"
               id="email"
               required
               autocomplete="email"
-              placeholder="Jane.Doe@email.com"
+              placeholder="Jane@Doe.com"
             />
           </div>
 
-          <div class="form-group">
-            <label for="panncakes">Vad åt du för pannkakor?</label>
+          <div class="grid">
+            <label class="label-header" for="panncakes"
+              >Vad åt du för pannkakor?</label
+            >
             <!-- Select is a dropdown containing "options" -->
-            <select name="panncakes" id="panncakes" multiple size="7">
+            <select
+              class="border-r"
+              name="panncakes"
+              id="panncakes"
+              multiple
+              size="7"
+            >
               <option value="" disabled selected>Välj..</option>
               <option value="classic">Klassiska pannkakor</option>
               <option value="green">Gröna pannkakor</option>
@@ -88,36 +98,99 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="msg">Meddelande</label>
+          <div class="grid">
+            <label class="label-header" for="msg">Meddelande</label>
             <!-- Rows determines the size of the textarea window before it start expanding -->
             <textarea
+              class="border-r"
               name="message"
               id="msg"
-              rows="6"
+              rows="10"
               placeholder="Text..."
             ></textarea>
           </div>
 
-          <!-- <div class="form-group">
-          <label for="name">Phone</label>
-          <input type="tel" id="phone" required>
-        </div> -->
+          <div class="grid">
+            <fieldset>
+              <!-- Legend is a semantic descriptor alongside fieldset which groups content -->
+              <legend>Är det första gången ni besöker oss?</legend>
+              <input
+                type="radio"
+                id="visit-yes"
+                name="visit_frequency"
+                value="yes"
+              />
+              <label for="visit-yes">Ja, första gången</label>
 
-          <!-- <div class="form-group">
-            <input type="checkbox" id="privacy" />
-            <label for="privacy" class="fine-print">
-              I agree that my personal data will be processed in accordance with
-              the
-              <a href="#">Privacy Policy</a>
+              <input
+                type="radio"
+                id="visit-no"
+                name="visit_frequency"
+                value="no"
+              />
+              <label for="visit-no">Nej, besökt förut</label>
+
+              <input
+                type="radio"
+                id="visit-unknown"
+                name="visit_frequency"
+                value="unsure"
+              />
+              <label for="visit-unknown">Vet ej</label>
+            </fieldset>
+          </div>
+
+          <div class="grid">
+            <fieldset>
+              <legend>Om ni ätit hos oss förut, hur många besök?</legend>
+              <input
+                type="radio"
+                id="visit-once"
+                name="visit_amount"
+                value="few"
+              />
+              <label for="visit-once">1-2 besök</label>
+
+              <input
+                type="radio"
+                id="visit-twice"
+                name="visit_amount"
+                value="several"
+              />
+              <label for="visit-twice">3-5 besök</label>
+
+              <input
+                type="radio"
+                id="visit-regularly"
+                name="visit_amount"
+                value="a lot"
+              />
+              <label for="visit-regularly">Jag är stammis</label>
+
+              <input
+                type="radio"
+                id="visit-unknown"
+                name="visit_amount"
+                value="unsure"
+              />
+              <label for="visit-unknown">Vet ej</label>
+            </fieldset>
+          </div>
+
+          <div class="grid">
+            <label for="privacy">
+              Jag samtycker till att mina personuppgifter behandlas i enlighet
+              med
+              <a href="#">integritetspolicyn</a>
+              <input type="checkbox" id="privacy" required />
             </label>
-          </div> -->
+          </div>
 
-          <button class="border-r btn-sec" type="submit">
+          <button class="border-r btn-sec box-shadow" type="submit">
             Skicka formulär
           </button>
-          <button class="border-r btn-sect" type="submit">Heeej =P</button>
         </form>
+        <div class="margin-1"></div>
       </div>
     </main>
   </body>
