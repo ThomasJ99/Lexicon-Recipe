@@ -170,6 +170,10 @@ li {
   text-align: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .italic-text {
   font-style: italic;
 }
@@ -308,10 +312,10 @@ li {
 }
 
 form {
-  display: grid;
-  @media (width > 720px) {
+  max-width: 50vw;
+  /* @media (width > 720px) {
     grid-template-columns: 1fr 1fr;
-  }
+  } */
   /*Adds some nice spacing*/
   /*Add similar to namn in contact!!!!!*/
   * + * {
@@ -363,34 +367,38 @@ form button {
 
 .hero-wrapper {
   display: grid;
-  /*Use this to create layers that can be stacked*/
+  /* Use this to create layers that can be stacked */
   grid-template-areas: "stack";
-  /*Fine tune after banner text size is correct*/
+  /* Fine tune after banner text size is correct */
   min-height: 500px;
 
+  /* Image styling inside banner */
   img {
+    /* Assigns the grid to be the same location as other "stack" */
     grid-area: stack;
-    /* max-height: 500px; */
-
     height: 100%;
     aspect-ratio: 3 / 1;
+    /* cover makes image take up the entire container without stretching */
     object-fit: cover;
+    /* top makes it display at the top of the image */
     object-position: top;
   }
 
+  /* h1 style */
   .text-container {
     grid-area: stack;
     display: grid;
-    /*Changes which order the layer is in*/
+    /* Changes which order the layer is in */
     z-index: 1;
-    /* width: min(30ch, 100%); */
+    /* Minor shift on h1 positioning */
     padding: 2rem;
     align-items: start;
     justify-items: stretch;
   }
 
+  /* Gradient that gets put on top of image */
   .gradient {
-    /*Puts the grid at the same location as the other elements*/
+    /* Puts the grid at the same location as the other elements */
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     z-index: 0;
@@ -422,6 +430,7 @@ form button {
       margin-top: 0.4em;
     }
 
+    /* Styling on images inside a .card, keeps it quite small height wise and width 100% to always take up the card width */
     img {
       border-radius: 5px;
       height: 30ch;
