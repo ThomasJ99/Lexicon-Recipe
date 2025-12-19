@@ -225,6 +225,7 @@ li {
 .m-5 {
   margin-inline: calc(16 * var(--base));
 }
+
 .gap-1 {
   gap: 1rem;
 }
@@ -311,17 +312,6 @@ li {
   }
 }
 
-form {
-  max-width: 50vw;
-  /* @media (width > 720px) {
-    grid-template-columns: 1fr 1fr;
-  } */
-  /*Adds some nice spacing*/
-  /*Add similar to namn in contact!!!!!*/
-  * + * {
-    margin-top: 0.4em;
-  }
-}
 
 textarea {
   padding: 0.5rem 1rem;
@@ -342,6 +332,7 @@ select {
 .label-header {
   color: var(--sec-accent);
   font-size: var(--fs-l);
+  padding-bottom: 1rem;
 }
 
 input {
@@ -351,10 +342,6 @@ input {
   border-bottom: 3px solid var(--clr-sec);
   /*Adds color to things like checkbox and radio buttons*/
   accent-color: var(--sec-accent);
-
-  & input:not([type="checkbox"]) {
-    width: 100%;
-  }
 }
 
 form button {

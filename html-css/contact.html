@@ -46,11 +46,11 @@
         post means we send it somewhere, get means we receive it  -->
         <article class="grid justify-center">
           <form
-            class="grid margin-i-3 gap-1 card border-r box-shadow padding-1 "
+            class="grid margin-i-3 gap-2 card border-r box-shadow padding-1"
             action="#"
             method="post"
           >
-            <div class="grid">
+            <section class="grid">
               <!-- The for attribute connects it to its content, allowing screenreaders to process it -->
               <label class="label-header" for="name">Namn</label>
               <!-- The attribute type="text" creates a normal text type input field -->
@@ -63,9 +63,9 @@
                 placeholder="Jane Doe"
               />
               <!-- Autocomplete attribute is required for accessibility -->
-            </div>
+            </section>
 
-            <div class="grid">
+            <section class="grid">
               <!-- Label describes something, similar to a header -->
               <label class="label-header" for="email">Email</label>
               <!-- Input creates a certain type of input field depending on its type attribute -->
@@ -77,12 +77,12 @@
                 autocomplete="email"
                 placeholder="Jane@Doe.com"
               />
-            </div>
+            </section>
 
-            <div class="grid">
-              <label class="label-header" for="panncakes"
-                >Vad åt du för pannkakor?</label
-              >
+            <section class="grid">
+              <label class="label-header" for="panncakes">
+                Vad åt du för pannkakor?
+              </label>
               <!-- Select is a dropdown containing "options" -->
               <select
                 class="border-r"
@@ -99,9 +99,9 @@
                 <option value="purple">Lila pannkakor</option>
                 <option value="pink">Rosa pannkakor</option>
               </select>
-            </div>
+            </section>
 
-            <div class="grid">
+            <section class="grid">
               <label class="label-header" for="msg">Meddelande</label>
               <!-- Rows determines the size of the textarea window before it start expanding -->
               <textarea
@@ -111,14 +111,17 @@
                 rows="5"
                 placeholder="Text..."
               ></textarea>
-            </div>
+            </section>
 
-            <div class="">
+            <section>
               <fieldset>
                 <!-- Legend is a semantic descriptor alongside fieldset which groups content -->
                 <legend>Är det första gången ni besöker oss?</legend>
 
+                <!-- Radio buttons where the user can only select one option at a time
+                     done by having different values and id's while sharing name -->
                 <label for="visit-yes">
+                  <!-- Nested input inside label here, not sure if I want to do this or not -->
                   <input
                     type="radio"
                     id="visit-yes"
@@ -144,9 +147,9 @@
                 />
                 <label for="visit-unknown">Vet ej</label>
               </fieldset>
-            </div>
+            </section>
 
-            <div class="">
+            <section>
               <fieldset>
                 <legend>Om ni ätit hos oss förut, hur många besök?</legend>
                 <input
@@ -181,9 +184,9 @@
                 />
                 <label for="visit-unsure">Vet ej</label>
               </fieldset>
-            </div>
+            </section>
 
-            <div class="">
+            <section>
               <label for="privacy">
                 Jag samtycker till att mina personuppgifter behandlas i enlighet
                 med
@@ -195,7 +198,7 @@
                   required
                 />
               </label>
-            </div>
+            </section>
 
             <button class="border-r btn-sec box-shadow" type="submit">
               Skicka formulär
